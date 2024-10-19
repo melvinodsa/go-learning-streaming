@@ -15,6 +15,7 @@ const bufferSize = 20
 const readingBufferSize = 100
 
 func main() {
+	now := time.Now()
 	ch, err := readFile("input.txt")
 	if err != nil {
 		panic(err)
@@ -22,6 +23,7 @@ func main() {
 	outChan := buffer(ch)
 	cl := writeToFile("output.txt", outChan)
 	<-cl
+	fmt.Println("total time", time.Since(now))
 }
 
 func readFile(path string) (chan []byte, error) {
