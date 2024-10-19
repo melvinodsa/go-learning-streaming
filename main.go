@@ -8,8 +8,8 @@ import (
 	"time"
 )
 
-var readingDelay = 100 * time.Microsecond
-var writingDelay = 1000 * time.Microsecond
+var readingDelay = 10 * time.Microsecond
+var writingDelay = 10 * time.Microsecond
 
 const readingBufferSize = 100
 
