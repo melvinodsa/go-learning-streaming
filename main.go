@@ -36,7 +36,7 @@ func readFile(path string) (chan []byte, error) {
 	return ch, nil
 }
 
-func keepReading(f *os.File, ch chan []byte) {
+func keepReading(f io.Reader, ch chan []byte) {
 	now := time.Now()
 	i := 0
 	b := make([]byte, readingBufferSize)
