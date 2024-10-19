@@ -14,12 +14,14 @@ var writingDelay = 1000 * time.Microsecond
 const readingBufferSize = 100
 
 func main() {
+	now := time.Now()
 	queue, err := readFile("input.txt")
 	if err != nil {
 		panic(err)
 	}
 	cl := writeToFile("output.txt", queue)
 	<-cl
+	fmt.Println("total time", time.Since(now))
 }
 
 // Queue represents a dynamically growing queue of byte slices
