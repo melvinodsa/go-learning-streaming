@@ -97,7 +97,7 @@ func readFile(path string) (*Queue, error) {
 	return queue, nil
 }
 
-func keepReading(f *os.File, queue *Queue) {
+func keepReading(f io.Reader, queue *Queue) {
 	now := time.Now()
 	i := 0
 	b := make([]byte, readingBufferSize)
